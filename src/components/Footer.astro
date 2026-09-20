@@ -1,0 +1,134 @@
+---
+import logo from '../assets/logo.svg';
+const year = new Date().getFullYear();
+---
+
+<footer id="contact">
+	<div class="container">
+		<div class="cta-block reveal">
+			<p class="eyebrow">Next Step</p>
+			<h2>Have a number<br />to <span class="serif-accent">move?</span></h2>
+			<p class="sub">
+				Tell us where the business needs to go. We'll reply within one business
+				day with a point of view — not a pitch deck.
+			</p>
+			<div class="actions">
+				<a href="mailto:hello@vertex.studio" class="btn-primary">hello@vertex.studio <span>↗</span></a>
+				<a href="mailto:hello@vertex.studio?subject=Intro%20call" class="btn-ghost">Book an intro call</a>
+			</div>
+		</div>
+		<div class="bottom">
+			<a href="#top" class="brand">
+				<img src={logo.src} alt="" width="24" height="24" />
+				<span>VERTEX<span class="reg">®</span></span>
+			</a>
+			<nav>
+				<a href="#work">Work</a>
+				<a href="#studio">Studio</a>
+				<a href="#results">Results</a>
+				<a href="#mission">Mission</a>
+			</nav>
+			<div class="socials">
+				<a href="#" aria-label="GitHub">GitHub</a>
+				<a href="#" aria-label="X">X</a>
+				<a href="#" aria-label="LinkedIn">LinkedIn</a>
+				<a href="#" aria-label="Dribbble">Dribbble</a>
+			</div>
+		</div>
+		<div class="legal">
+			<span>© {year} Vertex Studio LLC. All rights reserved.</span>
+			<span class="mono">Built fast. Built to last.</span>
+		</div>
+	</div>
+</footer>
+
+<style>
+	footer { padding: 130px 0 0; }
+	.cta-block {
+		text-align: center;
+		padding-bottom: 110px;
+	}
+	h2 {
+		font-size: clamp(2.8rem, 7vw, 5.4rem);
+		margin: 26px 0 24px;
+	}
+	.sub {
+		color: var(--muted);
+		max-width: 46ch;
+		margin: 0 auto;
+		font-size: 17px;
+	}
+	.actions {
+		display: flex;
+		justify-content: center;
+		gap: 14px;
+		margin-top: 44px;
+		flex-wrap: wrap;
+	}
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		background: var(--lime);
+		color: #060608;
+		font-weight: 600;
+		font-size: 15px;
+		padding: 15px 30px;
+		border-radius: 100px;
+		transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+	}
+	.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(200, 255, 46, 0.3); }
+	.btn-ghost {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 15px;
+		padding: 15px 30px;
+		border-radius: 100px;
+		border: 1px solid var(--line);
+		transition: border-color 0.25s, background 0.25s;
+	}
+	.btn-ghost:hover { border-color: rgba(255, 255, 255, 0.25); background: rgba(255, 255, 255, 0.03); }
+	.bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 30px;
+		flex-wrap: wrap;
+		padding: 34px 0;
+		border-top: 1px solid var(--line);
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 9px;
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 15px;
+		letter-spacing: 0.14em;
+	}
+	.reg { font-size: 8px; vertical-align: super; color: var(--muted); }
+	.bottom nav { display: flex; gap: 28px; }
+	.bottom nav a, .socials a {
+		font-size: 13.5px;
+		color: var(--muted);
+		transition: color 0.25s;
+	}
+	.bottom nav a:hover, .socials a:hover { color: var(--text); }
+	.socials { display: flex; gap: 22px; }
+	.legal {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		flex-wrap: wrap;
+		padding: 22px 0 30px;
+		border-top: 1px solid var(--line);
+		font-size: 13px;
+		color: var(--muted);
+	}
+	.mono { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; }
+	@media (max-width: 760px) {
+		.bottom { justify-content: center; text-align: center; }
+		.legal { justify-content: center; text-align: center; }
+	}
+</style>

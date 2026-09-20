@@ -1,0 +1,123 @@
+---
+const receipts = [
+	{
+		year: '2019',
+		metric: '2×',
+		unit: 'revenue in 90 days',
+		title: 'First client, first lesson.',
+		story:
+			'Our very first engagement was a two-person coffee roaster with a broken checkout flow. We rebuilt it in three weeks. Revenue doubled in a quarter — and we\'ve never lost the habit of sweating the "small" stuff.',
+	},
+	{
+		year: '2021',
+		metric: '+212%',
+		unit: 'conversion rate',
+		title: 'The invisible skincare brand.',
+		story:
+			'A DTC skincare brand came to us ranking for nothing and converting less. A ground-up rebuild plus a programmatic content engine put them on page one for 40+ terms. They sold out their holiday inventory by mid-November.',
+	},
+	{
+		year: '2023',
+		metric: '3×',
+		unit: 'demo bookings',
+		title: 'Traffic is not pipeline.',
+		story:
+			'A Series-A SaaS had plenty of visitors and an empty calendar. We rebuilt their marketing site and onboarding flow around one question: "what does a buyer need to believe?" The site now outbooks their best rep.',
+	},
+	{
+		year: '2025',
+		metric: '140',
+		unit: 'launches shipped',
+		title: 'The rule still holds.',
+		story:
+			'We shipped our 140th launch this year. Same senior team, same rule as day one: if it doesn\'t move a number, it doesn\'t ship. That discipline is the whole product.',
+	},
+];
+---
+
+<section class="receipts" id="results">
+	<div class="container">
+		<div class="head">
+			<p class="eyebrow reveal">Past Achievements</p>
+			<h2 class="reveal" style="transition-delay: 0.08s">
+				Receipts, <span class="serif-accent">not promises.</span>
+			</h2>
+			<p class="sub reveal" style="transition-delay: 0.14s">
+				A few stories from the archive. Names withheld — the numbers are the point.
+			</p>
+		</div>
+		<div class="list">
+			{receipts.map((r, i) => (
+				<article class="row reveal" style={`transition-delay: ${i * 0.06}s`}>
+					<span class="year">{r.year}</span>
+					<div class="metric">
+						<strong>{r.metric}</strong>
+						<em>{r.unit}</em>
+					</div>
+					<div class="text">
+						<h3>{r.title}</h3>
+						<p>{r.story}</p>
+					</div>
+					<span class="idx">{String(i + 1).padStart(2, '0')}</span>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.receipts { padding: 120px 0; }
+	.head { max-width: 640px; margin-bottom: 70px; }
+	.head h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin: 22px 0 18px; }
+	.sub { color: var(--muted); font-size: 17px; }
+	.list { border-top: 1px solid var(--line); }
+	.row {
+		display: grid;
+		grid-template-columns: 90px 220px 1fr 60px;
+		gap: 40px;
+		align-items: start;
+		padding: 44px 0;
+		border-bottom: 1px solid var(--line);
+		position: relative;
+		transition: background 0.35s, padding 0.35s var(--ease);
+	}
+	.row:hover {
+		background: linear-gradient(90deg, rgba(200, 255, 46, 0.035), transparent 55%);
+		padding-left: 20px;
+	}
+	.year {
+		font-family: var(--font-mono);
+		font-size: 14px;
+		color: var(--lime);
+		padding-top: 6px;
+	}
+	.metric strong {
+		display: block;
+		font-family: var(--font-display);
+		font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+		font-weight: 700;
+		letter-spacing: -0.03em;
+		line-height: 1;
+	}
+	.metric em {
+		font-style: normal;
+		font-family: var(--font-mono);
+		font-size: 11px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.text h3 { font-size: 21px; margin-bottom: 10px; }
+	.text p { color: var(--muted); font-size: 15.5px; max-width: 62ch; }
+	.idx {
+		font-family: var(--font-mono);
+		font-size: 13px;
+		color: rgba(255, 255, 255, 0.22);
+		text-align: right;
+		padding-top: 6px;
+	}
+	@media (max-width: 920px) {
+		.row { grid-template-columns: 1fr; gap: 18px; }
+		.idx { display: none; }
+	}
+</style>

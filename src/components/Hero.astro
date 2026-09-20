@@ -1,0 +1,191 @@
+---
+import artDashboard from '../assets/art-dashboard.svg';
+---
+
+<section class="hero" id="top">
+	<div class="hero-bg" aria-hidden="true">
+		<div class="grid"></div>
+		<div class="glow glow-a"></div>
+		<div class="glow glow-b"></div>
+	</div>
+	<div class="container hero-inner">
+		<p class="eyebrow reveal">Web Development & Growth Studio</p>
+		<h1 class="reveal" style="transition-delay: 0.1s">
+			We build websites<br />that <span class="serif-accent">grow</span> companies.
+		</h1>
+		<p class="lede reveal" style="transition-delay: 0.2s">
+			Vertex is a senior-only studio engineering digital experiences that turn
+			traffic into revenue — for startups, DTC brands, and SaaS teams who
+			measure everything.
+		</p>
+		<div class="actions reveal" style="transition-delay: 0.3s">
+			<a href="#contact" class="btn-primary">Start a project <span>↗</span></a>
+			<a href="#results" class="btn-ghost">See the receipts</a>
+		</div>
+		<div class="hero-visual reveal" style="transition-delay: 0.4s">
+			<div class="frame">
+				<div class="frame-bar">
+					<i></i><i></i><i></i>
+					<span class="frame-url">vertex.studio/client-dashboard</span>
+				</div>
+				<img src={artDashboard.src} alt="Client growth dashboard showing upward revenue charts" />
+			</div>
+			<div class="chip chip-a">
+				<strong>+212%</strong>
+				<span>conversion rate</span>
+			</div>
+			<div class="chip chip-b">
+				<strong>100</strong>
+				<span>lighthouse score</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		padding: 190px 0 60px;
+		overflow: hidden;
+	}
+	.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+	.grid {
+		position: absolute; inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+		background-size: 72px 72px;
+		mask-image: radial-gradient(ellipse 90% 65% at 50% 0%, black 30%, transparent 75%);
+		-webkit-mask-image: radial-gradient(ellipse 90% 65% at 50% 0%, black 30%, transparent 75%);
+	}
+	.glow { position: absolute; border-radius: 50%; filter: blur(90px); }
+	.glow-a {
+		width: 620px; height: 420px;
+		top: -160px; left: 50%;
+		transform: translateX(-60%);
+		background: radial-gradient(circle, rgba(200, 255, 46, 0.14), transparent 65%);
+	}
+	.glow-b {
+		width: 480px; height: 380px;
+		top: 240px; right: -120px;
+		background: radial-gradient(circle, rgba(167, 139, 250, 0.12), transparent 65%);
+	}
+	.hero-inner { position: relative; text-align: center; }
+	h1 {
+		font-size: clamp(2.9rem, 7.5vw, 6rem);
+		margin: 26px 0 26px;
+	}
+	.serif-accent { font-size: 1.06em; }
+	.lede {
+		max-width: 600px;
+		margin: 0 auto;
+		color: var(--muted);
+		font-size: 18px;
+	}
+	.actions {
+		display: flex;
+		justify-content: center;
+		gap: 14px;
+		margin-top: 40px;
+		flex-wrap: wrap;
+	}
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		background: var(--lime);
+		color: #060608;
+		font-weight: 600;
+		font-size: 15px;
+		padding: 15px 30px;
+		border-radius: 100px;
+		transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+	}
+	.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(200, 255, 46, 0.3); }
+	.btn-ghost {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 15px;
+		padding: 15px 30px;
+		border-radius: 100px;
+		border: 1px solid var(--line);
+		color: var(--text);
+		transition: border-color 0.25s, background 0.25s;
+	}
+	.btn-ghost:hover { border-color: rgba(255, 255, 255, 0.25); background: rgba(255, 255, 255, 0.03); }
+
+	.hero-visual {
+		position: relative;
+		max-width: 940px;
+		margin: 90px auto 0;
+	}
+	.frame {
+		border: 1px solid var(--line);
+		border-radius: 18px;
+		overflow: hidden;
+		background: var(--panel);
+		box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6), 0 0 80px rgba(200, 255, 46, 0.05);
+	}
+	.frame-bar {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		padding: 13px 18px;
+		border-bottom: 1px solid var(--line);
+	}
+	.frame-bar i {
+		width: 10px; height: 10px;
+		border-radius: 50%;
+		background: #2a2a30;
+	}
+	.frame-bar i:first-child { background: rgba(255, 95, 87, 0.7); }
+	.frame-bar i:nth-child(2) { background: rgba(254, 188, 46, 0.7); }
+	.frame-bar i:nth-child(3) { background: rgba(40, 200, 64, 0.7); }
+	.frame-url {
+		margin-left: 14px;
+		font-family: var(--font-mono);
+		font-size: 12px;
+		color: var(--muted);
+	}
+	.chip {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		background: rgba(12, 12, 16, 0.85);
+		backdrop-filter: blur(12px);
+		border: 1px solid var(--line);
+		border-radius: 14px;
+		padding: 14px 20px;
+		text-align: left;
+		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+		animation: float 6s ease-in-out infinite;
+	}
+	.chip strong {
+		font-family: var(--font-display);
+		font-size: 24px;
+		color: var(--lime);
+	}
+	.chip span {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.chip-a { top: 18%; left: -46px; }
+	.chip-b { bottom: 16%; right: -40px; animation-delay: -3s; }
+	@keyframes float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-12px); }
+	}
+	@media (max-width: 1100px) {
+		.chip-a { left: 8px; }
+		.chip-b { right: 8px; }
+	}
+	@media (max-width: 640px) {
+		.hero { padding-top: 150px; }
+		.chip { display: none; }
+	}
+</style>

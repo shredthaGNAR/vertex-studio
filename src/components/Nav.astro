@@ -1,0 +1,102 @@
+---
+import logo from '../assets/logo.svg';
+---
+
+<header id="nav">
+	<div class="nav-inner container">
+		<a href="#top" class="brand" aria-label="Vertex home">
+			<img src={logo.src} alt="" width="28" height="28" />
+			<span class="wordmark">VERTEX<span class="reg">®</span></span>
+		</a>
+		<nav class="links">
+			<a href="#work">Work</a>
+			<a href="#studio">Studio</a>
+			<a href="#results">Results</a>
+			<a href="#mission">Mission</a>
+		</nav>
+		<a href="#contact" class="cta">Start a project <span class="arrow">↗</span></a>
+	</div>
+</header>
+
+<script>
+	const nav = document.getElementById('nav');
+	const onScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 24);
+	onScroll();
+	window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+<style>
+	header {
+		position: fixed;
+		top: 0; left: 0; right: 0;
+		z-index: 100;
+		transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+		border-bottom: 1px solid transparent;
+	}
+	header.scrolled {
+		background: rgba(6, 6, 8, 0.72);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border-bottom-color: var(--line);
+	}
+	.nav-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 72px;
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.wordmark {
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 17px;
+		letter-spacing: 0.14em;
+	}
+	.reg { font-size: 9px; vertical-align: super; color: var(--muted); }
+	.links {
+		display: flex;
+		gap: 36px;
+	}
+	.links a {
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--muted);
+		transition: color 0.25s;
+		position: relative;
+	}
+	.links a::after {
+		content: '';
+		position: absolute;
+		left: 0; bottom: -6px;
+		width: 0; height: 1px;
+		background: var(--lime);
+		transition: width 0.3s var(--ease);
+	}
+	.links a:hover { color: var(--text); }
+	.links a:hover::after { width: 100%; }
+	.cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		background: var(--lime);
+		color: #060608;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 11px 20px;
+		border-radius: 100px;
+		transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+	}
+	.cta:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 30px rgba(200, 255, 46, 0.25);
+	}
+	.cta .arrow { transition: transform 0.25s var(--ease); }
+	.cta:hover .arrow { transform: translate(2px, -2px); }
+	@media (max-width: 860px) {
+		.links { display: none; }
+	}
+</style>

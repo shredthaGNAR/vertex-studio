@@ -1,0 +1,47 @@
+<section class="mission" id="mission">
+	<div class="glow" aria-hidden="true"></div>
+	<div class="container">
+		<p class="eyebrow reveal">Our Mission</p>
+		<h2 class="reveal" style="transition-delay: 0.1s">
+			To give ambitious companies an <span class="serif-accent">unfair advantage</span>
+			on the web — software that loads instantly, ranks relentlessly, and sells
+			while you sleep.
+		</h2>
+		<p class="note reveal" style="transition-delay: 0.2s">
+			No vanity metrics. No disposable redesigns. Just compounding digital assets
+			built by people who ship.
+		</p>
+	</div>
+</section>
+
+<style>
+	.mission {
+		position: relative;
+		padding: 170px 0;
+		overflow: hidden;
+		border-top: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
+		text-align: center;
+	}
+	.glow {
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		width: 760px; height: 460px;
+		background: radial-gradient(ellipse, rgba(200, 255, 46, 0.08), transparent 65%);
+		filter: blur(50px);
+		pointer-events: none;
+	}
+	h2 {
+		font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+		max-width: 20ch;
+		margin: 30px auto 34px;
+		line-height: 1.18;
+	}
+	.note {
+		color: var(--muted);
+		font-size: 17px;
+		max-width: 52ch;
+		margin: 0 auto;
+	}
+</style>

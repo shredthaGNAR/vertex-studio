@@ -1,0 +1,127 @@
+---
+import founder from '../assets/founder.svg';
+---
+
+<section class="about" id="studio">
+	<div class="container split">
+		<div class="portrait reveal">
+			<img src={founder.src} alt="Alex Carter, founder of Vertex" />
+			<div class="badge">
+				<span class="pulse"></span>
+				The founder
+			</div>
+		</div>
+		<div class="bio">
+			<p class="eyebrow reveal">The Studio</p>
+			<h2 class="reveal" style="transition-delay: 0.08s">
+				Founded by a builder,<br />run like a <span class="serif-accent">lab.</span>
+			</h2>
+			<p class="reveal" style="transition-delay: 0.16s">
+				I'm Alex — I started Vertex in 2017 after one too many beautiful websites
+				that moved no numbers. So I built the studio I kept wishing existed:
+				engineers who think like marketers, and marketers who read the source code.
+			</p>
+			<p class="reveal" style="transition-delay: 0.22s">
+				Nine years and 140+ launches later, the rule hasn't changed: every pixel
+				must earn its place, and every build must move a metric. No account
+				managers, no hand-offs into the void — you work directly with the people
+				writing your code.
+			</p>
+			<ul class="facts reveal" style="transition-delay: 0.3s">
+				<li><span>01</span>Senior-only team — no juniors on your build</li>
+				<li><span>02</span>Based in Austin, working worldwide</li>
+				<li><span>03</span>You talk to builders, not middlemen</li>
+			</ul>
+			<p class="signature reveal" style="transition-delay: 0.36s">Alex Carter</p>
+			<p class="role reveal" style="transition-delay: 0.4s">Founder & Principal Engineer</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about { padding: 120px 0; }
+	.split {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 80px;
+		align-items: center;
+	}
+	.portrait {
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+		border: 1px solid var(--line);
+		box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+	}
+	.portrait img { width: 100%; height: auto; }
+	.badge {
+		position: absolute;
+		bottom: 18px; left: 18px;
+		display: inline-flex;
+		align-items: center;
+		gap: 9px;
+		background: rgba(12, 12, 16, 0.8);
+		backdrop-filter: blur(10px);
+		border: 1px solid var(--line);
+		border-radius: 100px;
+		padding: 9px 18px;
+		font-family: var(--font-mono);
+		font-size: 12px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+	.pulse {
+		width: 8px; height: 8px;
+		border-radius: 50%;
+		background: var(--lime);
+		box-shadow: 0 0 0 0 rgba(200, 255, 46, 0.5);
+		animation: pulse 2.4s infinite;
+	}
+	@keyframes pulse {
+		0% { box-shadow: 0 0 0 0 rgba(200, 255, 46, 0.5); }
+		70% { box-shadow: 0 0 0 10px rgba(200, 255, 46, 0); }
+		100% { box-shadow: 0 0 0 0 rgba(200, 255, 46, 0); }
+	}
+	.bio h2 {
+		font-size: clamp(2rem, 4.2vw, 3.2rem);
+		margin: 22px 0 26px;
+	}
+	.bio p { color: var(--muted); margin-bottom: 18px; max-width: 54ch; }
+	.facts {
+		list-style: none;
+		margin: 32px 0 40px;
+		border-top: 1px solid var(--line);
+	}
+	.facts li {
+		display: flex;
+		align-items: baseline;
+		gap: 20px;
+		padding: 16px 0;
+		border-bottom: 1px solid var(--line);
+		font-size: 15px;
+		font-weight: 500;
+	}
+	.facts li span {
+		font-family: var(--font-mono);
+		font-size: 12px;
+		color: var(--lime);
+	}
+	.signature {
+		font-family: var(--font-serif);
+		font-style: italic;
+		font-size: 42px;
+		color: var(--text) !important;
+		margin-bottom: 2px !important;
+		line-height: 1;
+	}
+	.role {
+		font-family: var(--font-mono);
+		font-size: 12px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+	@media (max-width: 920px) {
+		.split { grid-template-columns: 1fr; gap: 50px; }
+		.portrait { max-width: 440px; }
+	}
+</style>

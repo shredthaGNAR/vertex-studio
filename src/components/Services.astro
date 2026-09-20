@@ -1,0 +1,128 @@
+---
+const services = [
+	{
+		idx: '01',
+		title: 'Web Development',
+		desc: 'Astro, Next.js, and headless commerce. Sub-second loads, 100-point Lighthouse runs, and codebases your next team will actually thank you for.',
+		tags: ['Astro / Next.js', 'Headless CMS', 'Edge-rendered'],
+	},
+	{
+		idx: '02',
+		title: 'Growth & SEO',
+		desc: 'Technical SEO, programmatic pages, and content engines that compound month over month — not spikes that fade.',
+		tags: ['Technical SEO', 'Programmatic', 'Content Ops'],
+	},
+	{
+		idx: '03',
+		title: 'CRO & Analytics',
+		desc: 'Every pixel instrumented. We form hypotheses, run experiments, and keep what moves revenue — delete what doesn\'t.',
+		tags: ['A/B Testing', 'Funnels', 'Attribution'],
+	},
+	{
+		idx: '04',
+		title: 'Product Design',
+		desc: 'Interfaces that feel inevitable: fast, accessible, unmistakably yours. Design systems that scale past the redesign.',
+		tags: ['UI / UX', 'Design Systems', 'Motion'],
+	},
+];
+---
+
+<section class="services" id="services">
+	<div class="container">
+		<div class="head">
+			<p class="eyebrow reveal">Capabilities</p>
+			<h2 class="reveal" style="transition-delay: 0.08s">
+				Everything a website needs<br />to <span class="serif-accent">print.</span>
+			</h2>
+		</div>
+		<div class="grid">
+			{services.map((s, i) => (
+				<article class="card reveal" style={`transition-delay: ${i * 0.07}s`}>
+					<div class="top">
+						<span class="idx">{s.idx}</span>
+						<span class="arrow">↗</span>
+					</div>
+					<h3>{s.title}</h3>
+					<p>{s.desc}</p>
+					<div class="tags">
+						{s.tags.map((t) => <span>{t}</span>)}
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.services { padding: 120px 0; }
+	.head { margin-bottom: 70px; }
+	.head h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin-top: 22px; }
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	.card {
+		background: var(--panel);
+		border: 1px solid var(--line);
+		border-radius: 20px;
+		padding: 40px;
+		transition: transform 0.4s var(--ease), border-color 0.4s, background 0.4s;
+		position: relative;
+		overflow: hidden;
+	}
+	.card::before {
+		content: '';
+		position: absolute;
+		top: -60px; right: -60px;
+		width: 220px; height: 220px;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(200, 255, 46, 0.09), transparent 70%);
+		opacity: 0;
+		transition: opacity 0.4s;
+	}
+	.card:hover { transform: translateY(-6px); border-color: rgba(200, 255, 46, 0.25); background: var(--panel-2); }
+	.card:hover::before { opacity: 1; }
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 60px;
+	}
+	.idx {
+		font-family: var(--font-mono);
+		font-size: 13px;
+		color: var(--lime);
+	}
+	.arrow {
+		width: 38px; height: 38px;
+		display: grid;
+		place-items: center;
+		border: 1px solid var(--line);
+		border-radius: 50%;
+		font-size: 15px;
+		transition: background 0.3s, color 0.3s, transform 0.3s var(--ease);
+	}
+	.card:hover .arrow {
+		background: var(--lime);
+		color: #060608;
+		transform: rotate(45deg);
+	}
+	h3 { font-size: 24px; margin-bottom: 14px; }
+	p { color: var(--muted); font-size: 15.5px; margin-bottom: 26px; }
+	.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+	.tags span {
+		font-family: var(--font-mono);
+		font-size: 11.5px;
+		letter-spacing: 0.06em;
+		padding: 7px 14px;
+		border: 1px solid var(--line);
+		border-radius: 100px;
+		color: var(--muted);
+	}
+	@media (max-width: 760px) {
+		.grid { grid-template-columns: 1fr; }
+		.card { padding: 30px; }
+		.top { margin-bottom: 40px; }
+	}
+</style>

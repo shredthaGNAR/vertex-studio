@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <radialGradient id="phalo" cx="0.5" cy="0.55" r="0.55">
+      <stop offset="0%" stop-color="#C8FF2E" stop-opacity="0.22"/><stop offset="100%" stop-color="#C8FF2E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pherom" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C8FF2E" stop-opacity="0.5"/><stop offset="50%" stop-color="#A78BFA" stop-opacity="0.35"/><stop offset="100%" stop-color="#67E8F9" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="#0A0A0D"/>
+  <ellipse cx="600" cy="520" rx="420" ry="380" fill="url(#phalo)"/>
+  <g transform="rotate(-7 600 460)">
+    <rect x="370" y="110" width="460" height="760" rx="54" fill="#101014" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <rect x="388" y="128" width="424" height="724" rx="40" fill="#0B0B0F"/>
+    <rect x="540" y="146" width="120" height="26" rx="13" fill="#101014"/>
+    <rect x="412" y="200" width="376" height="110" rx="18" fill="url(#pherom)" opacity="0.85"/>
+    <text x="436" y="248" font-family="Arial, sans-serif" font-weight="bold" font-size="26" fill="#fff">Summer Drop</text>
+    <text x="436" y="280" font-family="monospace" font-size="13" fill="rgba(255,255,255,0.75)">CONVERSION-READY</text>
+    <g transform="translate(340,0)"><rect x="80" y="330" width="180" height="170" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="96" y="346" width="148" height="86" rx="10" fill="rgba(200,255,46,0.0808372649922967)"/>
+      <rect x="96" y="446" width="130.2411382761784" height="10" rx="5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="96" y="466" width="60" height="10" rx="5" fill="#C8FF2E" opacity="0.8"/><rect x="280" y="330" width="180" height="170" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="296" y="346" width="148" height="86" rx="10" fill="rgba(200,255,46,0.10326972279697656)"/>
+      <rect x="296" y="446" width="124.51217128895223" height="10" rx="5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="296" y="466" width="60" height="10" rx="5" fill="#C8FF2E" opacity="0.8"/><rect x="80" y="520" width="180" height="170" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="96" y="536" width="148" height="86" rx="10" fill="rgba(200,255,46,0.060091096665710206)"/>
+      <rect x="96" y="636" width="130.87715438799933" height="10" rx="5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="96" y="656" width="60" height="10" rx="5" fill="#C8FF2E" opacity="0.8"/><rect x="280" y="520" width="180" height="170" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="296" y="536" width="148" height="86" rx="10" fill="rgba(200,255,46,0.06090806771069765)"/>
+      <rect x="296" y="636" width="95.27182517107576" height="10" rx="5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="296" y="656" width="60" height="10" rx="5" fill="#C8FF2E" opacity="0.8"/></g>
+    <rect x="412" y="740" width="376" height="54" rx="27" fill="#C8FF2E"/>
+    <text x="600" y="774" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#0A0A0D" text-anchor="middle">Shop now</text>
+    <rect x="412" y="812" width="376" height="24" rx="12" fill="rgba(255,255,255,0.05)"/>
+    <circle cx="470" cy="824" r="7" fill="rgba(255,255,255,0.4)"/><circle cx="560" cy="824" r="7" fill="#C8FF2E"/><circle cx="650" cy="824" r="7" fill="rgba(255,255,255,0.4)"/><circle cx="740" cy="824" r="7" fill="rgba(255,255,255,0.4)"/>
+  </g>
+  
+  <filter id="g3"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  <rect width="100%" height="100%" filter="url(#g3)" opacity="0.05"/>
+</svg>

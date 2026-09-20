@@ -1,0 +1,59 @@
+---
+const items = [
+	'Next.js', 'Astro', 'React', 'TypeScript', 'Headless Commerce',
+	'Technical SEO', 'CRO', 'Analytics', 'Design Systems', 'Performance',
+	'Node.js', 'Edge Computing',
+];
+const doubled = [...items, ...items];
+---
+
+<div class="ticker" aria-hidden="true">
+	<div class="track">
+		{doubled.map((item) => (
+			<span class="item">{item}<i>✦</i></span>
+		))}
+	</div>
+</div>
+
+<style>
+	.ticker {
+		border-top: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
+		padding: 20px 0;
+		overflow: hidden;
+		position: relative;
+	}
+	.ticker::before,
+	.ticker::after {
+		content: '';
+		position: absolute;
+		top: 0; bottom: 0;
+		width: 140px;
+		z-index: 2;
+		pointer-events: none;
+	}
+	.ticker::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+	.ticker::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+	.track {
+		display: flex;
+		width: max-content;
+		animation: scroll 36s linear infinite;
+	}
+	.ticker:hover .track { animation-play-state: paused; }
+	.item {
+		display: inline-flex;
+		align-items: center;
+		gap: 28px;
+		padding-right: 28px;
+		font-family: var(--font-mono);
+		font-size: 13px;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--muted);
+		white-space: nowrap;
+	}
+	.item i { color: var(--lime); font-style: normal; font-size: 10px; }
+	@keyframes scroll {
+		to { transform: translateX(-50%); }
+	}
+</style>
